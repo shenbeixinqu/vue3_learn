@@ -9,9 +9,7 @@
 <body>
     <div id="app"></div>
     <template id="my-app">
-        <div>
-            {{message}}
-        </div>
+        <h2 v-pre>{{counter}}</h2>
     </template>
     <script src="../js/vue.js"></script>
     <script>
@@ -19,7 +17,7 @@
             template: '#my-app',
             data() {
                 return {
-                    message: 'hello world'
+                    counter: 100
                 }
             },
         }

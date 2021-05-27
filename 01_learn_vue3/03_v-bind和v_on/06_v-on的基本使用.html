@@ -9,9 +9,7 @@
 <body>
     <div id="app"></div>
     <template id="my-app">
-        <div>
-            {{message}}
-        </div>
+        <div v-on="{click:btnClick, mousemove: mouseMove}"></div>
     </template>
     <script src="../js/vue.js"></script>
     <script>
@@ -19,7 +17,7 @@
             template: '#my-app',
             data() {
                 return {
-                    message: 'hello world'
+                    counter: 100
                 }
             },
         }

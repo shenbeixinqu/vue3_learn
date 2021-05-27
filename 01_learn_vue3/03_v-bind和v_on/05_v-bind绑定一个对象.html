@@ -9,9 +9,7 @@
 <body>
     <div id="app"></div>
     <template id="my-app">
-        <div>
-            {{message}}
-        </div>
+        <div v-bind="info">哈哈哈哈</div>
     </template>
     <script src="../js/vue.js"></script>
     <script>
@@ -19,7 +17,11 @@
             template: '#my-app',
             data() {
                 return {
-                    message: 'hello world'
+                   info:{
+                       name: "why",
+                       age: 18,
+                       height: 1.88
+                   }
                 }
             },
         }

@@ -9,9 +9,7 @@
 <body>
     <div id="app"></div>
     <template id="my-app">
-        <div>
-            {{message}}
-        </div>
+        <div :[name]="value">哈哈哈</div>
     </template>
     <script src="../js/vue.js"></script>
     <script>
@@ -19,7 +17,8 @@
             template: '#my-app',
             data() {
                 return {
-                    message: 'hello world'
+                    name: "abc",
+                    value: "123"
                 }
             },
         }
