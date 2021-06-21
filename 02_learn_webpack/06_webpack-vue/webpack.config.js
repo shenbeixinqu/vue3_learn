@@ -66,6 +66,21 @@ module.exports = {
                 generator: {
                     filename:"font/[name]_[hash:6][ext]"
                 }
+            },
+            // {
+            //     test:/\.js$/,
+            //     use:{
+            //         loader:'babel-loader',
+            //         options:{
+            //             presets:[
+            //                 "@babel/preset-env"
+            //             ]
+            //         }
+            //     }
+            // }
+            {
+                test:/\.js$/,
+                loader:"babel-loader" 
             }
         ]
     },
