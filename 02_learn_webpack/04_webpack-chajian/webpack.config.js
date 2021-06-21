@@ -2,7 +2,6 @@ const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-
 module.exports = {
     entry: './src/main.js',
     output: {
@@ -45,7 +44,7 @@ module.exports = {
                 },
                 parser:{
                     dataUrlCondition:{
-                        maxSize: 10 * 1024,
+                        maxSize: 100 * 1024
                     }
                 }
             },
@@ -64,7 +63,7 @@ module.exports = {
                 generator: {
                     filename:"font/[name]_[hash:6][ext]"
                 }
-            },
+            }
         ]
     },
     plugins:[
