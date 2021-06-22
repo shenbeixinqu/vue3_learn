@@ -1,6 +1,9 @@
 const path = require("path");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const { DefinePlugin } = require("webpack");
+const { VueLoaderPlugin } = require('vue-loader/dist/index')
+
 
 module.exports = {
     mode:"development",
@@ -81,11 +84,23 @@ module.exports = {
             {
                 test:/\.js$/,
                 loader:"babel-loader" 
+            },
+            {
+                test:/\.vue$/,
+                loader:"vue-loader"
             }
         ]
     },
     plugins:[
         new CleanWebpackPlugin(),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            template: "./public/index.html",
+            title: "哈哈哈哈"
+        }),
+        new DefinePlugin({
+            BASE_URL: "'./'"
+          }),
+        new VueLoaderPlugin()
+        
     ]
 }
