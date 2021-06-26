@@ -1,0 +1,1 @@
+import{l as o}from"./vendor.450bfc68.js";console.log("Hello World"),console.log(10+20),console.log(o.join(["abc","cba"],"-"));const e=document.createElement("div");e.className="title",e.innerHTML="Hello Vite",document.body.append(e);

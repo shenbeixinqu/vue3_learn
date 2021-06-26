@@ -7,13 +7,17 @@
     "vite": "^2.3.8"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^1.2.3",
+    "@vue/compiler-sfc": "^3.1.2",
     "less": "^4.1.1",
     "lodash-es": "^4.17.21",
     "postcss": "^8.3.5",
     "postcss-preset-env": "^6.7.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "serve":"vite",
+    "build":"vite build",
+    "preview":"vite preview"
   },
   "author": "",
   "license": "ISC"
