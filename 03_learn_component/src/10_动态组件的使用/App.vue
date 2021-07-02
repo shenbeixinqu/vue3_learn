@@ -6,8 +6,14 @@
       {{ item }}
     </button>
 </div>
- 
-  <component :is="CurrentItem" name="kobe" age="18" @pageClick="pageClick"></component>
+    <keep-alive exclude="category">
+          <component :is="CurrentItem" 
+                      name="kobe"
+                      age="18"
+                      @pageClick="pageClick">
+
+          </component>
+    </keep-alive>
 </template>
 
 <script>
