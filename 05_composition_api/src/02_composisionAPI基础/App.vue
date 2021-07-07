@@ -6,7 +6,7 @@
 
 <script>
 
-import Home from './02_setup的返回值.vue'
+import Home from './Home.vue'
 
 export default {
     components:{

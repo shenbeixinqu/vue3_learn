@@ -1,13 +1,16 @@
 <template>
   <div>
-      Home Page
-      <h2>{{title}}</h2>
-      <span>当前计数：{{counter}}</span>
+      Home Page1
+      <span>当前计数：{{state.counter}}</span>
       <button @click="increment">+1</button>
   </div>
 </template>
 
 <script>
+
+
+import {reactive} from 'vue'
+
 export default {
     props:{
         title:{
@@ -17,14 +20,16 @@ export default {
     },
     // setup(props, context) {
     setup() {
-       let counter = 100;
+       const state = reactive({
+           counter:100
+       })
        const increment = () => {
-           counter++
-           console.log(counter)
+           state.counter++
+           console.log(state.counter)
        }
        return{
-           title:"Hello World",
-           counter
+           state,
+           increment
        }
     }
 }

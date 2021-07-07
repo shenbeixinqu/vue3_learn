@@ -1,13 +1,16 @@
 <template>
   <div>
-      Home Page
-      <h2>{{title}}</h2>
-      <span>当前计数：{{counter}}</span>
+      Home Page1
+      <h2>当前计数：{{counter}}</h2>
       <button @click="increment">+1</button>
   </div>
 </template>
 
 <script>
+
+
+import {ref} from 'vue'
+
 export default {
     props:{
         title:{
@@ -17,14 +20,14 @@ export default {
     },
     // setup(props, context) {
     setup() {
-       let counter = 100;
+       let counter = ref(100)
        const increment = () => {
-           counter++
-           console.log(counter)
+           counter.value++
+           console.log(counter.value)
        }
        return{
-           title:"Hello World",
-           counter
+           counter,
+           increment
        }
     }
 }
