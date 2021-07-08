@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './03_refAPI的补充/App.vue'
+import App from './04_computed和watch/App.vue'
 
 createApp(App).mount('#app')
