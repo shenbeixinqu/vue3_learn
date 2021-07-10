@@ -13,15 +13,19 @@ export default {
     setup() {       
        const info = reactive({name:"why"})
        const name = ref("james")
-       
-        watch([()=>({...info}),name],([newInfo,newName], [oldInfo,oldName]) => {
-            console.log(newInfo,newName,oldInfo,oldName)
-        },{
-            deep:true
+        //1.帧听watch时，传入一个getter函数
+        // watch(() => info.name,(newValue, oldValue) => {
+        //     console.log(newValue,oldValue)
+        // })
+
+        // 2.传入一个可响应式的对象
+        watch(name,(newValue, oldValue) => {
+            console.log(newValue,oldValue)
         })
 
        const changeData = () => {
-            name.value = 'kobe'
+        //    info.name = "kobe"
+        name.value = 'kobe'
        }
        return{
            info,

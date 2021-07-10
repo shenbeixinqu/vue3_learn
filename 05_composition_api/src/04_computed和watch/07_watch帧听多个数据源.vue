@@ -16,8 +16,6 @@ export default {
        
         watch([()=>({...info}),name],([newInfo,newName], [oldInfo,oldName]) => {
             console.log(newInfo,newName,oldInfo,oldName)
-        },{
-            deep:true
         })
 
        const changeData = () => {
