@@ -1,0 +1,19 @@
+<template>
+  <div v-format-time="'YYYY/MM/DD'">{{timestamp}}</div>
+</template>
+
+<script>
+export default {
+    setup() {
+        const timestamp = 1624452193;
+
+        return {
+            timestamp
+        }
+    }
+}
+</script>
+
+<style>
+
+</style>
