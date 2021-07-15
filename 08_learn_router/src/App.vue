@@ -1,7 +1,7 @@
 <template>
   <div>
-      <router-link to='/home'>Home</router-link>
-      <router-link to='/about'>About</router-link>
+      <router-link to='/home' active-class="why-active">Home</router-link>
+      <router-link to='/about' active-class="why-active">About</router-link>
       <router-view></router-view>
   </div>
 </template>
@@ -13,5 +13,11 @@ export default {
 </script>
 
 <style>
+    .router-link-active {
+        color:red
+    }
 
+    .why-active {
+        color: gray;
+    }
 </style>
