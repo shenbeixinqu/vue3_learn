@@ -1,7 +1,7 @@
 <template>
   <div>
-      <h2>About</h2>
-      <h4>{{$route.query.age}}</h4>
+      <h1>404 NotFound</h1>
+      <h3>{{$route.params.pathMatch}}</h3>
   </div>
 </template>
 

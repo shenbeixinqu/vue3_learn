@@ -1,7 +1,6 @@
 <template>
   <div>
-      <h2>About</h2>
-      <h4>{{$route.query.age}}</h4>
+      <h2>HomeShop</h2>
   </div>
 </template>
 
