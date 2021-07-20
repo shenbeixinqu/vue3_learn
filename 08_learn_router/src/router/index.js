@@ -46,4 +46,11 @@ const router = createRouter({
     history: createWebHistory()
 })
 
+const categoryRoute = {
+    path:"/category",
+    component:() => import ('../pages/Category.vue')
+}
+
+router.addRoute(categoryRoute)
+
 export default router

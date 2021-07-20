@@ -1,6 +1,12 @@
 <template>
   <div>
-      <router-link to='/home' active-class="why-active">首页</router-link>
+      <router-link to='/home' active-class="why-active" v-slot='props' custom>
+        <button>首页</button>
+        <button>{{props.href}}</button>
+        <button @click='props.navigate'>跳转</button>
+        <!-- <span>{{props.route}}</span> -->
+
+      </router-link>
       <router-link to='/about' active-class="why-active">关于</router-link>
       <router-link to='/user/kobe'>用户</router-link>
       <router-view></router-view>
