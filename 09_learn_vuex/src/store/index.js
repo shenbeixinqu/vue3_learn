@@ -3,7 +3,10 @@ import {createStore} from 'vuex'
 const store = createStore({
     state(){
         return{
-            counter:150
+            counter:150,
+            name:"why",
+            age:18,
+            height:1.88
         }
     },
     mutations:{
