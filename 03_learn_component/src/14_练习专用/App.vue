@@ -1,15 +1,48 @@
 <template>
-  <show-message title="哈哈哈哈" content="呵呵呵呵"></show-message>
+    <div>{{counter}}</div>
+    <show-message
+        @add="addOne"
+        @sub="subOne"
+        @addn="addN">
+
+    </show-message>
+
+    <my-slot-cpn>
+      我是中间
+    </my-slot-cpn>
+    <my-slot-cpn>
+      <my-button></my-button>
+    </my-slot-cpn>
 </template>
 
 <script>
 
-import ShowMessage from './ShowMessage.vue'
+import showMessage from './ShowMessage'
+import MyButton from './MyButton'
+import MySlotCpn from './MySlotCpn.vue'
 
 export default {
-    components:{
-        ShowMessage
+  components:{
+    showMessage,
+    MyButton,
+    MySlotCpn
+  },
+  data() {
+    return {
+      counter:0
     }
+  },
+  methods: {
+    addOne(){
+      this.counter++
+    },
+    subOne(){
+      this.counter--
+    },
+    addN(num){
+      this.counter+=num
+    }
+  },
 }
 </script>
 
