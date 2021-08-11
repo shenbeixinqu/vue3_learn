@@ -1,21 +1,24 @@
 <template>
-  <h2>
-      <div>home2:{{sCounter}}</div>
-
-  </h2>
+  <div>
+      <hr>
+      <p>总价值:{{ $store.getters.totalPrice}}</p>
+      <p>大于n：{{$store.getters.totalPriceGreatN(2)}}</p>
+      <hr>
+      <h2>ageInfo:{{ageInfo}}</h2>
+      <h2>{{nameInfo}}</h2>
+  </div>
 </template>
 
 <script>
 
-import {useStore} from 'vuex'
-import { computed } from 'vue'
+import { useGetters} from '../hooks/useGetters'
 
 export default {
     setup() {
-        const store = useStore()
-        const sCounter = computed(() => store.state.counter)
-        return {
-            sCounter
+        
+        const storeGetters = useGetters(["ageInfo","nameInfo"])
+        return{
+            ...storeGetters
         }
     }
 }
