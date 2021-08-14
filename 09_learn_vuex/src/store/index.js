@@ -1,4 +1,5 @@
 import {createStore} from 'vuex'
+import axios from 'axios'
 
 const store = createStore({
     state(){
@@ -13,7 +14,8 @@ const store = createStore({
                 {name:"从零学pyhton",price:30,counter:1},
                 {name:"从零学css",price:40,counter:1},
             ],
-            discount:0.5
+            discount:0.5,
+            multidata:[]
         }
     },
     mutations:{
@@ -22,6 +24,9 @@ const store = createStore({
         },
         decrement(state){
             state.counter--
+        },
+        addBannerData(state, payload){
+            state.multidata = payload
         }
     },
     getters:{
@@ -54,6 +59,18 @@ const store = createStore({
         },
         heightInfo(state){
             return `height:${state.height}`
+        }
+    },
+    actions:{
+        incrementAction(context){
+            setTimeout(() => {
+                context.commit("increment")
+            }, 1000)
+        },
+        getHomeMultidata(context){
+            axios.get("http://123.207.32.32:8000/home/multidata").then(res => {
+                context.commit("addBannerData", res.data.data.banner.list)
+            })
         }
     }
 })
