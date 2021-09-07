@@ -11,4 +11,4 @@ export function useMapper(mapper, mapFn){
     })
 
     return storeState
-} 
+}  
